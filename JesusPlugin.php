@@ -11,7 +11,7 @@
 
 define('JESUS_PLUGIN_DIR', dirname(__FILE__));
 
-require_once JESUS_PLUGIN_DIR . '/functions.php';
+require_once JESUS_PLUGIN_DIR . '/helpers/Jesus.php';
 
 /**
  * The Participate plugin.
