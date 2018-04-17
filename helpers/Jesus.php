@@ -8,10 +8,10 @@
  */
 function jesus_get_values($item) {
 	
-	$mapping = JesusPlugin::getMapping();
+	$mapping = JesusPlugin::getMapping($item);
 
 	$elementsTexts = $item->getAllElementTextsByElement();
-	
+
 	$res = array();
 	foreach ($mapping as $section => $map) {
 		foreach ($map as $label => $id) {

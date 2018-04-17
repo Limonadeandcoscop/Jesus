@@ -35,8 +35,14 @@ class JesusPlugin extends Omeka_Plugin_AbstractPlugin
     );
 
 
-    public static function getMapping()
+    public static function getMapping($item)
     {
+        if ($item_type_id = $item->item_type_id) {
+            $file = JESUS_PLUGIN_DIR .'/'. $item_type_id . '.ini';
+            if(file_exists($file)) {
+                return parse_ini_file($file, true);
+            }
+        }
         return parse_ini_file(JESUS_PLUGIN_DIR.'/mapping.ini', true);
     }
 
